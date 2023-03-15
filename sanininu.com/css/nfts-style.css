@@ -1,0 +1,54 @@
+.layout-nft {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.layout-nft:not(:first-of-type) {
+  margin-top: 3em;
+}
+.layout-nft:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.layout-nft__item {
+  padding-top: 1em;
+  padding-left: 3.5em;
+}
+.layout-nft__item--body {
+  flex-grow: 9999;
+  flex-basis: 15rem;
+  text-align: left;
+}
+.layout-nft__item--figure {
+  margin-right: auto;
+  flex-grow: 1;
+}
+@supports ((max-width: -webkit-max-content) or (max-width: -moz-max-content) or (max-width: max-content)) {
+  .layout-nft__item--figure {
+    min-width: 15rem;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    flex-basis: 15rem;
+    flex-grow: 99999;
+  }
+  
+  .layout-nft__item {
+    padding-left: 0;
+  }
+  
+  .layout-nft__item--body {
+    text-align: center;
+  }
+}
+
+.nft-image {
+  max-width: 50%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+}
+
+.layout-nft__item * + * {
+  margin-top: 1em;
+}
